@@ -13,7 +13,7 @@
         <!--Medications-->
         <scene sceneID="Uea-vi-bex">
             <objects>
-                <collectionViewController id="hve-Pu-qTQ" sceneMemberID="viewController">
+                <collectionViewController id="hve-Pu-qTQ" customClass="MedicationCollectionViewController" customModule="MedicationTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="JoO-cP-k15">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,7 +25,7 @@
                             <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MedicationCell" id="Kbw-a9-PsW">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MedicationCell" id="Kbw-a9-PsW" customClass="MedicationCollectionViewCell" customModule="MedicationTracker" customModuleProvider="target">
                                 <rect key="frame" x="10" y="10" width="150" height="190"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -84,10 +84,10 @@
             </objects>
             <point key="canvasLocation" x="734.78260869565224" y="168.75"/>
         </scene>
-        <!--View Controller-->
+        <!--Medication Detail View Controller-->
         <scene sceneID="WlV-Np-L57">
             <objects>
-                <viewController id="D98-fw-3pM" sceneMemberID="viewController">
+                <viewController id="D98-fw-3pM" customClass="MedicationDetailViewController" customModule="MedicationTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pyt-ne-3rA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -188,10 +188,10 @@
             </objects>
             <point key="canvasLocation" x="1628.985507246377" y="168.75"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Medication View Controller-->
         <scene sceneID="XSd-nB-4z8">
             <objects>
-                <viewController id="Axh-dM-nEW" sceneMemberID="viewController">
+                <viewController id="Axh-dM-nEW" customClass="AddMedicationViewController" customModule="MedicationTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q6l-qc-rJs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
