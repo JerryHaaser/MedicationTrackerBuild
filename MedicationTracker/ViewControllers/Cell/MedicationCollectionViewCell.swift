@@ -14,5 +14,20 @@ class MedicationCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var medicationImageView: UIImageView!
     @IBOutlet weak var timeToTakeLabel: UILabel!
     
+    var medication: Medication? {
+        didSet {
+            updateViews()
+        }
+    }
+    
+    private func updateViews() {
+        guard let medication = medication else { return }
+        
+        guard case medication.image = UIImage() else { return }
+        
+        medicationNameLabel.text = medication.name
+        medicationImageView.image = medication.image
+        timeToTakeLabel.text = "Take at \(medication.takeTime)"
+    }
     
 }

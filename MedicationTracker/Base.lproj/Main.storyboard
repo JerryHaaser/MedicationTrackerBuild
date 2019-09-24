@@ -65,7 +65,7 @@
                                 <connections>
                                     <outlet property="medicationImageView" destination="hUW-cp-mPD" id="cYU-gL-j5S"/>
                                     <outlet property="medicationNameLabel" destination="1f7-TP-Ro1" id="mQy-hR-NOv"/>
-                                    <outlet property="timeToTakeLabel" destination="aTZ-5z-bdG" id="PCa-uo-1hO"/>
+                                    <outlet property="timeToTakeLabel" destination="aTZ-5z-bdG" id="mai-wv-nnX"/>
                                     <segue destination="D98-fw-3pM" kind="show" identifier="MedicationDetailShowSegue" id="78h-Ji-Msz"/>
                                 </connections>
                             </collectionViewCell>
