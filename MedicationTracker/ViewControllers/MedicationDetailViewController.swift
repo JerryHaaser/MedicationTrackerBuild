@@ -9,6 +9,13 @@
 import UIKit
 
 class MedicationDetailViewController: UIViewController {
+    
+    @IBOutlet weak var medicationNameLabel: UILabel!
+    @IBOutlet weak var medicationImageView: UIImageView!
+    @IBOutlet weak var dosageLabel: UILabel!
+    @IBOutlet weak var timeToTakeLabel: UILabel!
+    @IBOutlet weak var specialInstructionsTextView: UITextView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,7 +23,14 @@ class MedicationDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func deleteButton(_ sender: UIBarButtonItem) {
+        
+    }
+    
+    @IBAction func editButton(_ sender: UIBarButtonItem) {
+        
+    }
+    
     /*
     // MARK: - Navigation
 

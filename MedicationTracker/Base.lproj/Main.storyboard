@@ -63,6 +63,9 @@
                                 </constraints>
                                 <size key="customSize" width="150" height="190"/>
                                 <connections>
+                                    <outlet property="medicationImageView" destination="hUW-cp-mPD" id="cYU-gL-j5S"/>
+                                    <outlet property="medicationNameLabel" destination="1f7-TP-Ro1" id="mQy-hR-NOv"/>
+                                    <outlet property="timeToTakeLabel" destination="aTZ-5z-bdG" id="PCa-uo-1hO"/>
                                     <segue destination="D98-fw-3pM" kind="show" identifier="MedicationDetailShowSegue" id="78h-Ji-Msz"/>
                                 </connections>
                             </collectionViewCell>
@@ -178,11 +181,26 @@
                         <viewLayoutGuide key="safeArea" id="k5k-eQ-Zk8"/>
                     </view>
                     <toolbarItems>
-                        <barButtonItem title="Delete" id="JT7-wp-tTF"/>
+                        <barButtonItem title="Delete" id="JT7-wp-tTF">
+                            <connections>
+                                <action selector="deleteButton:" destination="D98-fw-3pM" id="SEa-gA-uVs"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="ie7-C1-cjW"/>
-                        <barButtonItem systemItem="edit" id="BW8-jP-iR7"/>
+                        <barButtonItem systemItem="edit" id="BW8-jP-iR7">
+                            <connections>
+                                <action selector="editButton:" destination="D98-fw-3pM" id="toW-Zn-2XY"/>
+                            </connections>
+                        </barButtonItem>
                     </toolbarItems>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="dosageLabel" destination="6NH-Oe-49b" id="KKk-F2-Rp9"/>
+                        <outlet property="medicationImageView" destination="sLv-Qr-2gR" id="aap-J2-IFh"/>
+                        <outlet property="medicationNameLabel" destination="PW9-4z-Pc7" id="ZT8-xd-sS0"/>
+                        <outlet property="specialInstructionsTextView" destination="LgY-y0-WC0" id="88a-3t-aXv"/>
+                        <outlet property="timeToTakeLabel" destination="b7r-TY-Mrz" id="Dxm-f6-Ng6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TKz-io-JoA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

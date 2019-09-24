@@ -10,4 +10,9 @@ import UIKit
 
 class MedicationCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var medicationNameLabel: UILabel!
+    @IBOutlet weak var medicationImageView: UIImageView!
+    @IBOutlet weak var timeToTakeLabel: UILabel!
+    
+    
 }
