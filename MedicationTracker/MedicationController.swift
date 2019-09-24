@@ -13,8 +13,8 @@ class MedicationController {
     
     var medications: [Medication] = []
     
-    func addMedication(name: String, dosage: String, takeTime: TakeTime, image: UIImage) {
-        let medication = Medication(name: name, dosage: dosage, takeTime: takeTime, image: image)
+    func addMedication(name: String, dosage: String, specialInstructions: String, takeTime: TakeTime, image: UIImage) {
+        let medication = Medication(name: name, dosage: dosage, specialInstructions: specialInstructions, takeTime: takeTime, image: image)
         medications.append(medication)
     }
     
