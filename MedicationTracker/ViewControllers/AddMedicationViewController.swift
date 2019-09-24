@@ -24,7 +24,15 @@ class AddMedicationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setViews()
+        
+    }
+    
+    func setViews() {
+        
+    }
+    
+    @IBAction func uploadPhotoButton(_ sender: UIButton) {
         
     }
     

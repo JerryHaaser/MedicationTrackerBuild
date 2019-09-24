@@ -18,5 +18,9 @@ class MedicationController {
         medications.append(medication)
     }
     
+    func deleteMedication(medication: Medication) {
+        
+    }
+    
    // func update(medication: Medication, )
 }
