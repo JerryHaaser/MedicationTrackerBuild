@@ -74,7 +74,7 @@ class AddMedicationViewController: UIViewController, UIImagePickerControllerDele
         guard let name = medicationNameTextField.text,
               let dosage = dosageTextField.text,
               let specialInstructions = specialInstructionsTextField.text,
-              let takeTime = timePicker,
+              let takeTime = timePicker?.date,
             let image = addMedicationImageView.image else { return }
               
         

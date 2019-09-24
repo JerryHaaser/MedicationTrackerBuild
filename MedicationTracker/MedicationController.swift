@@ -13,13 +13,54 @@ class MedicationController {
     
     var medications: [Medication] = []
     
-    func addMedication(name: String, dosage: String, specialInstructions: String, takeTime: TakeTime, image: UIImage) {
+    init() {
+        loadFromPersistentStore()
+    }
+    
+    var medicationListURL: URL? {
+        let fileManager = FileManager.default
+        guard let documents = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil }
+        
+        return documents.appendingPathComponent("MedicationList.plist")
+    }
+    
+    @ discardableResult func addMedication(name: String, dosage: String, specialInstructions: String, takeTime: Date?, image: UIImage) -> Medication {
         let medication = Medication(name: name, dosage: dosage, specialInstructions: specialInstructions, takeTime: takeTime, image: image)
         medications.append(medication)
+        saveToPersistentStore()
+        return medication
     }
     
     func deleteMedication(medication: Medication) {
+        if let index = medications.firstIndex(of: medication) {
+            medications.remove(at: index)
+            saveToPersistentStore()
+        }
+    }
+    
+    func saveToPersistentStore() {
+        guard let url = medicationListURL else { return }
         
+        do {
+            let encoder = PropertyListEncoder()
+            let data = try encoder.encode(medications)
+            try data.write(to: url)
+        } catch {
+            print("Error saving medication data: \(error)")
+        }
+    }
+    
+    func loadFromPersistentStore() {
+        let fileManager = FileManager.default
+        guard let url = medicationListURL,
+            fileManager.fileExists(atPath: url.path) else { return }
+        do {
+            let data = try Data(contentsOf: url)
+            let decoder = PropertyListDecoder()
+            medications = try decoder.decode([Medication].self, from: data)
+        } catch {
+            print("Error loading medication data: \(error)")
+        }
     }
     
    // func update(medication: Medication, )
