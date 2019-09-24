@@ -242,6 +242,9 @@
                                 <rect key="frame" x="181" y="783" width="52" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButton:" destination="Axh-dM-nEW" eventType="touchUpInside" id="f6v-i1-5Ls"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IKk-RQ-ZmD">
                                 <rect key="frame" x="20" y="490" width="374" height="216"/>
@@ -290,6 +293,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Jg2-FP-Sap"/>
                     </view>
+                    <connections>
+                        <outlet property="addMedicationImageView" destination="Dgl-LB-ndh" id="Hjm-QB-Kft"/>
+                        <outlet property="dosageTextField" destination="gF6-48-3SM" id="leL-PB-FTD"/>
+                        <outlet property="medicationNameTextField" destination="d4s-Md-voC" id="zzv-iD-Sno"/>
+                        <outlet property="specialInstructionsTextField" destination="Fkh-zX-2cc" id="ECD-bl-mYl"/>
+                        <outlet property="timePicker" destination="KUl-IV-AXv" id="t7W-9k-NFr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yM8-1d-aUR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

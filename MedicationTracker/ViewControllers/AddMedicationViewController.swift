@@ -10,13 +10,24 @@ import UIKit
 
 class AddMedicationViewController: UIViewController {
 
+    @IBOutlet weak var medicationNameTextField: UITextField!
+    @IBOutlet weak var dosageTextField: UITextField!
+    @IBOutlet weak var specialInstructionsTextField: UITextField!
+    @IBOutlet weak var addMedicationImageView: UIImageView!
+    @IBOutlet weak var timePicker: UIDatePicker!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func saveButton(_ sender: UIButton) {
+        
+    }
+    
     /*
     // MARK: - Navigation
 
