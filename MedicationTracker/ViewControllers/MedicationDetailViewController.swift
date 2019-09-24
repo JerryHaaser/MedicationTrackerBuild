@@ -16,7 +16,11 @@ class MedicationDetailViewController: UIViewController {
     @IBOutlet weak var timeToTakeLabel: UILabel!
     @IBOutlet weak var specialInstructionsTextView: UITextView!
     
-
+    var medicationController = MedicationController()
+    
+    var medication: Medication?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

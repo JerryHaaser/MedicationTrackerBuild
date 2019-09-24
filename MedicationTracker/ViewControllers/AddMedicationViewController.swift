@@ -16,12 +16,16 @@ class AddMedicationViewController: UIViewController {
     @IBOutlet weak var addMedicationImageView: UIImageView!
     @IBOutlet weak var timePicker: UIDatePicker!
     
+    var medication: Medication?
     
+    var medicationController: MedicationController?
+    
+    var medicationCell: MedicationCollectionViewCell?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
     }
     
     @IBAction func saveButton(_ sender: UIButton) {

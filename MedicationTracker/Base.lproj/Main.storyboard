@@ -78,7 +78,7 @@
                     <navigationItem key="navigationItem" title="Medications" id="1fC-WB-LW1">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Uek-pl-ktT">
                             <connections>
-                                <segue destination="Axh-dM-nEW" kind="show" id="LEi-Az-Yx0"/>
+                                <segue destination="Axh-dM-nEW" kind="show" identifier="AddMedicationSegue" id="LEi-Az-Yx0"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

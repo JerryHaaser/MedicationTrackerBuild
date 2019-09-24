@@ -8,12 +8,15 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "MedicationCell"
 
 class MedicationCollectionViewController: UICollectionViewController {
 
+    let medicationController = MedicationController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView?.reloadData()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -24,35 +27,54 @@ class MedicationCollectionViewController: UICollectionViewController {
         // Do any additional setup after loading the view.
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "AddMedicationSegue" {
+            
+            let addMedicationVC = segue.destination as? AddMedicationViewController
+            addMedicationVC?.medicationController = medicationController
+            
+        } else if segue.identifier == "MedicationDetailShowSegue" {
+            
+            if let medicationDetailVC = segue.destination as? MedicationDetailViewController {
+                if let indexPath = collectionView.indexPathsForSelectedItems?.first {
+                    medicationDetailVC.medicationController = medicationController
+                    medicationDetailVC.medication = medicationController.medications[indexPath.row]
+                }
+            }
+            
+        }
     }
-    */
+    
 
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
+//    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 0
+//    }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return medicationController.medications.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-        // Configure the cell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? MedicationCollectionViewCell else { return UICollectionViewCell() }
+        
+        let aMedication = medicationController.medications[indexPath.item]
+        cell.medication = aMedication
     
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //let item = medicationController.medications[indexPath.row]
+        collectionView.reloadItems(at: [indexPath])
     }
 
     // MARK: UICollectionViewDelegate
