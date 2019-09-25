@@ -33,7 +33,7 @@ class MedicationDetailViewController: UIViewController {
         guard let medication = medication else { return }
         
         medicationNameLabel.text = medication.name
-//        medicationImageView.image = medication.image
+
         dosageLabel.text = medication.dosage
         timeToTakeLabel.text = "\(String(describing: medication.takeTime))"
         specialInstructionsTextView.text = medication.specialInstructions
