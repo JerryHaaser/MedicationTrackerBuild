@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct Medication: Codable, Equatable {
+struct Medication: Codable {
     var name: String
     var dosage: String
     var specialInstructions: String

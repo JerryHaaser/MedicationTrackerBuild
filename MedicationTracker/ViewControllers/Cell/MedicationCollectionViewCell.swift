@@ -25,9 +25,15 @@ class MedicationCollectionViewCell: UICollectionViewCell {
         
         guard case medication.image = UIImage() else { return }
         
+        guard case medication.takeTime = medication.takeTime else { return }
+        
         medicationNameLabel.text = medication.name
         medicationImageView.image = medication.image
-        timeToTakeLabel.text = "Take at \(medication.takeTime)"
+        timeToTakeLabel.text = "\(String(describing: medication.takeTime))"
+//        if medication.takeTime == medication.takeTime {
+//            timeToTakeLabel.text = medication.takeTime
+//        } else { return }
+//        timeToTakeLabel.text = "Take at \(medication.takeTime ?? <#default value#>)"
     }
     
 }
