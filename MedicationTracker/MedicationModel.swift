@@ -9,18 +9,19 @@
 import Foundation
 import UIKit
 
-struct Medication: Codable {
+struct Medication: Codable, Equatable {
     var name: String
     var dosage: String
     var specialInstructions: String
     var takeTime: Date?
-    var image: UIImage?
+    var image: Data
     
     init(name: String, dosage: String, specialInstructions: String, takeTime: Date?, image: UIImage) {
         self.name = name
         self.dosage = dosage
         self.specialInstructions = specialInstructions
         self.takeTime = takeTime
-        self.image = image
+        self.image = image.pngData()!
     }
 }
+

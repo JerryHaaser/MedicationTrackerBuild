@@ -20,11 +20,31 @@ class MedicationDetailViewController: UIViewController {
     
     var medication: Medication?
     
+    override func viewWillAppear(_ animated: Bool) {
+        updateViews()
+    }
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//
+//        // Do any additional setup after loading the view.
+//    }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    func updateViews() {
+        guard let medication = medication else { return }
+        
+        medicationNameLabel.text = medication.name
+//        medicationImageView.image = medication.image
+        dosageLabel.text = medication.dosage
+        timeToTakeLabel.text = "\(String(describing: medication.takeTime))"
+        specialInstructionsTextView.text = medication.specialInstructions
+        
+        
+        let uiImage: UIImage = UIImage(data: medication.image)!
+        medicationImageView.image = uiImage
+            
+        
+        
+        
     }
     
     @IBAction func deleteButton(_ sender: UIBarButtonItem) {

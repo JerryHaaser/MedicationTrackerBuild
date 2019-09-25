@@ -23,12 +23,16 @@ class MedicationCollectionViewCell: UICollectionViewCell {
     private func updateViews() {
         guard let medication = medication else { return }
         
-        guard case medication.image = UIImage() else { return }
+        guard case medication.image = medication.image else { return }
         
         guard case medication.takeTime = medication.takeTime else { return }
         
         medicationNameLabel.text = medication.name
-        medicationImageView.image = medication.image
+        
+        let uiImage: UIImage = UIImage(data: medication.image)!
+        medicationImageView.image = uiImage
+        
+        //medicationImageView.image = medication.image
         timeToTakeLabel.text = "\(String(describing: medication.takeTime))"
 //        if medication.takeTime == medication.takeTime {
 //            timeToTakeLabel.text = medication.takeTime
