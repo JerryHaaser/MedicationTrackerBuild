@@ -64,7 +64,7 @@ class MedicationCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? MedicationCollectionViewCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MedicationCell", for: indexPath) as? MedicationCollectionViewCell else { return UICollectionViewCell() }
         
         let aMedication = medicationController.medications[indexPath.item]
         cell.medication = aMedication

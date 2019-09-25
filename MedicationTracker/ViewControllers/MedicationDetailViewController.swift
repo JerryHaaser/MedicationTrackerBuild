@@ -49,6 +49,8 @@ class MedicationDetailViewController: UIViewController {
     
     @IBAction func deleteButton(_ sender: UIBarButtonItem) {
         
+        guard let medication = medication else { return }
+        medicationController.deleteMedication(medication: medication)
     }
     
     @IBAction func editButton(_ sender: UIBarButtonItem) {
