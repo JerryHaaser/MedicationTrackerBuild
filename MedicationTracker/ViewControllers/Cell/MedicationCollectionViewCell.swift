@@ -20,6 +20,14 @@ class MedicationCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    var dateFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "hh:mm a"
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        return formatter
+    }
+    
+    
     private func updateViews() {
         guard let medication = medication else { return }
         
@@ -33,10 +41,10 @@ class MedicationCollectionViewCell: UICollectionViewCell {
         medicationImageView.image = uiImage
         
         //medicationImageView.image = medication.image
-        timeToTakeLabel.text = "\(String(describing: medication.takeTime))"
-//        if medication.takeTime == medication.takeTime {
-//            timeToTakeLabel.text = medication.takeTime
-//        } else { return }
+        //timeToTakeLabel.text =
+        if medication.takeTime == medication.takeTime {
+            timeToTakeLabel.text = dateFormatter.string(from: medication.takeTime!)
+        } else { return }
 //        timeToTakeLabel.text = "Take at \(medication.takeTime ?? <#default value#>)"
     }
     

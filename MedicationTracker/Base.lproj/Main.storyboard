@@ -19,53 +19,46 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hDC-pl-ead">
-                            <size key="itemSize" width="150" height="150"/>
+                            <size key="itemSize" width="150" height="210"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MedicationCell" id="Kbw-a9-PsW" customClass="MedicationCollectionViewCell" customModule="MedicationTracker" customModuleProvider="target">
-                                <rect key="frame" x="10" y="10" width="150" height="190"/>
+                                <rect key="frame" x="10" y="10" width="150" height="210"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="150" height="190"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="150" height="210"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kSG-YH-7eb">
-                                            <rect key="frame" x="0.0" y="0.0" width="190" height="230"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SL4-9R-d2V">
+                                            <rect key="frame" x="1" y="0.0" width="148" height="190"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SL4-9R-d2V">
-                                                    <rect key="frame" x="0.0" y="0.0" width="148" height="190"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medication Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1f7-TP-Ro1">
-                                                            <rect key="frame" x="0.0" y="0.0" width="148" height="20.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hUW-cp-mPD">
-                                                            <rect key="frame" x="0.0" y="20.5" width="148" height="149"/>
-                                                        </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="00:00 am" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTZ-5z-bdG">
-                                                            <rect key="frame" x="0.0" y="169.5" width="148" height="20.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medication Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1f7-TP-Ro1">
+                                                    <rect key="frame" x="0.0" y="0.0" width="148" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hUW-cp-mPD">
+                                                    <rect key="frame" x="0.0" y="20.5" width="148" height="149"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="149" id="y2u-Oe-oXh"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00 am" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTZ-5z-bdG">
+                                                    <rect key="frame" x="0.0" y="169.5" width="148" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="SL4-9R-d2V" secondAttribute="bottom" id="WZQ-Bs-Xel"/>
-                                                <constraint firstItem="SL4-9R-d2V" firstAttribute="top" secondItem="kSG-YH-7eb" secondAttribute="top" id="ZeP-QV-SGK"/>
-                                                <constraint firstItem="SL4-9R-d2V" firstAttribute="leading" secondItem="kSG-YH-7eb" secondAttribute="leading" id="dDb-xl-Oah"/>
-                                                <constraint firstAttribute="trailing" secondItem="SL4-9R-d2V" secondAttribute="trailing" id="fRK-rX-Jy5"/>
-                                            </constraints>
                                         </stackView>
                                     </subviews>
                                 </view>
-                                <size key="customSize" width="150" height="190"/>
+                                <size key="customSize" width="150" height="210"/>
                                 <connections>
                                     <outlet property="medicationImageView" destination="hUW-cp-mPD" id="cYU-gL-j5S"/>
                                     <outlet property="medicationNameLabel" destination="1f7-TP-Ro1" id="mQy-hR-NOv"/>
@@ -99,6 +92,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Bid-Lv-fSC">
+                                <rect key="frame" x="46" y="189" width="322" height="322"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medication Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PW9-4z-Pc7">
+                                        <rect key="frame" x="0.0" y="0.0" width="322" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sLv-Qr-2gR">
+                                        <rect key="frame" x="0.0" y="58" width="322" height="264"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="yUt-z6-YtQ">
                                 <rect key="frame" x="20" y="518" width="140" height="30"/>
                                 <subviews>
@@ -139,7 +146,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Special Instructions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0vw-BE-JyH">
-                                <rect key="frame" x="20" y="617" width="171" height="24"/>
+                                <rect key="frame" x="20" y="617" width="170.5" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -153,20 +160,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Bid-Lv-fSC">
-                                <rect key="frame" x="46" y="189" width="322" height="322"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medication Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PW9-4z-Pc7">
-                                        <rect key="frame" x="0.0" y="0.0" width="322" height="42"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sLv-Qr-2gR">
-                                        <rect key="frame" x="0.0" y="58" width="322" height="264"/>
-                                    </imageView>
-                                </subviews>
-                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -352,13 +345,17 @@
         <!--Navigation Controller-->
         <scene sceneID="TUt-3R-Bhe">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="E5S-mO-uC8" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="E5S-mO-uC8" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="Me1-kB-aB9">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uH3-7Q-Wjd">
+                        <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="hve-Pu-qTQ" kind="relationship" relationship="rootViewController" id="0hG-le-VSe"/>
                     </connections>

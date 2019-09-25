@@ -15,6 +15,13 @@ class MedicationController {
     
     var medications: [Medication] = []
     
+    var dateFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        return formatter
+    }
+    
     init() {
         loadFromPersistentStore()
     }
@@ -39,6 +46,12 @@ class MedicationController {
             saveToPersistentStore()
         }
     }
+    
+//    func updateMedication(medication: Medication, time: Date) {
+//        medication.takeTime =
+//        
+//        
+//    }
     
     func saveToPersistentStore() {
         guard let url = medicationListURL else { return }

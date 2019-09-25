@@ -16,9 +16,17 @@ class MedicationDetailViewController: UIViewController {
     @IBOutlet weak var timeToTakeLabel: UILabel!
     @IBOutlet weak var specialInstructionsTextView: UITextView!
     
-    var medicationController = MedicationController()
+    var medicationController: MedicationController?
     
     var medication: Medication?
+    
+    var dateFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "hh:mm a"
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        return formatter
+    }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         updateViews()
@@ -35,9 +43,12 @@ class MedicationDetailViewController: UIViewController {
         medicationNameLabel.text = medication.name
 
         dosageLabel.text = medication.dosage
-        timeToTakeLabel.text = "\(String(describing: medication.takeTime))"
-        specialInstructionsTextView.text = medication.specialInstructions
         
+        if medication.takeTime == medication.takeTime {
+            timeToTakeLabel.text = dateFormatter.string(from: medication.takeTime!)
+        } else { return }
+        
+        specialInstructionsTextView.text = medication.specialInstructions
         
         let uiImage: UIImage = UIImage(data: medication.image)!
         medicationImageView.image = uiImage
@@ -50,7 +61,9 @@ class MedicationDetailViewController: UIViewController {
     @IBAction func deleteButton(_ sender: UIBarButtonItem) {
         
         guard let medication = medication else { return }
-        medicationController.deleteMedication(medication: medication)
+        medicationController?.deleteMedication(medication: medication)
+        
+        self.navigationController!.popToRootViewController(animated: true)
     }
     
     @IBAction func editButton(_ sender: UIBarButtonItem) {

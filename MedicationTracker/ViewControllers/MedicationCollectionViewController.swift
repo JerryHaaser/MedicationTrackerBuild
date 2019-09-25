@@ -26,6 +26,10 @@ class MedicationCollectionViewController: UICollectionViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        collectionView?.reloadData()
+    }
 
     
     // MARK: - Navigation
