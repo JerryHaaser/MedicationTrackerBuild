@@ -14,6 +14,10 @@ class MedicationCollectionViewController: UICollectionViewController {
 
     let medicationController = MedicationController()
     
+    var time = Date(timeIntervalSinceNow: 0)
+    
+    var medication: Medication?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView?.reloadData()
@@ -67,8 +71,13 @@ class MedicationCollectionViewController: UICollectionViewController {
         
         let aMedication = medicationController.medications[indexPath.item]
         cell.medication = aMedication
+       
+        if time == medication?.takeTime {
+            cell.layer.borderColor = UIColor.red.cgColor
+        } else {
+            cell.layer.borderColor = UIColor.black.cgColor
+        }
         
-        cell.layer.borderColor = UIColor.black.cgColor
         cell.layer.borderWidth = 2
         cell.layer.cornerRadius = 8
     

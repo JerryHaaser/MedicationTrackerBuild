@@ -23,7 +23,7 @@ class MedicationDetailViewController: UIViewController {
     var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
         formatter.dateFormat = "hh:mm a"
-        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        formatter.timeZone = .current
         return formatter
     }
     

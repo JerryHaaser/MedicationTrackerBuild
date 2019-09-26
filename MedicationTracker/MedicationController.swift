@@ -18,7 +18,7 @@ class MedicationController {
     var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm"
-        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        formatter.timeZone = .current
         return formatter
     }
     
