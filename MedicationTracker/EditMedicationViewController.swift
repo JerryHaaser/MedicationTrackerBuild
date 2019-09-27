@@ -111,7 +111,7 @@ class EditMedicationViewController: UIViewController, UIImagePickerControllerDel
     @IBAction func saveEditButton(_ sender: UIButton) {
         
         
-        medicationController?.deleteMedication(medication: medication!)
+       // medicationController?.deleteMedication(medication: medication!)
         
         
         guard let medication = medication.self else { return }
