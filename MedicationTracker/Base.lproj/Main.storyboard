@@ -437,8 +437,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
-                                    <action selector="saveButton:" destination="5ro-xv-uSZ" eventType="touchUpInside" id="YNR-6q-Nmp"/>
-                                    <action selector="saveEditButton:" destination="5ro-xv-uSZ" eventType="touchUpInside" id="eoI-Kh-B4M"/>
+                                    <action selector="saveEditButton:" destination="5ro-xv-uSZ" eventType="touchUpInside" id="J9A-tp-MMG"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q9k-dg-2Bi">
@@ -492,16 +491,11 @@
                         <viewLayoutGuide key="safeArea" id="4gD-wv-uiW"/>
                     </view>
                     <connections>
-                        <outlet property="addMedicationImageView" destination="7mO-mG-PUV" id="6cV-AC-1zJ"/>
                         <outlet property="dosageEditTextField" destination="PcG-S5-GwR" id="05v-AK-iW7"/>
-                        <outlet property="dosageTextField" destination="PcG-S5-GwR" id="AK6-Lz-Ou5"/>
                         <outlet property="editTakeTImePicker" destination="rW5-vz-ZHw" id="0Kz-YN-wWL"/>
                         <outlet property="medicationEditImageView" destination="7mO-mG-PUV" id="eGA-JE-TrC"/>
                         <outlet property="medicationNameEditTextField" destination="kkQ-K0-J4K" id="reZ-Nk-EUT"/>
-                        <outlet property="medicationNameTextField" destination="kkQ-K0-J4K" id="nFu-4f-arg"/>
                         <outlet property="sIEditTextField" destination="Q46-LE-YDF" id="IGo-ao-m45"/>
-                        <outlet property="specialInstructionsTextField" destination="Q46-LE-YDF" id="gw5-9m-adz"/>
-                        <outlet property="timePicker" destination="rW5-vz-ZHw" id="TsE-uz-Rqb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zgl-tH-Ra2" userLabel="First Responder" sceneMemberID="firstResponder"/>

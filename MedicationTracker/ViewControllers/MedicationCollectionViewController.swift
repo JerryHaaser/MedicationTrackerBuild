@@ -55,8 +55,13 @@ class MedicationCollectionViewController: UICollectionViewController {
             }
             
         } else if segue.identifier == "EditShowSegue" {
-            let medicationEditVC = segue.destination as? EditMedicationViewController
-            medicationEditVC?.medicationController = medicationController
+            if let medicationEditVC = segue.destination as? EditMedicationViewController {
+                if let indexPath = collectionView.indexPathsForSelectedItems?.first {
+                    medicationEditVC.medicationController = medicationController
+                    medicationEditVC.medication = medicationController.medications[indexPath.row]
+                }
+            }
+            
         }
     }
 
