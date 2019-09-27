@@ -96,7 +96,7 @@ class AddMedicationViewController: UIViewController, UIImagePickerControllerDele
         content.sound = UNNotificationSound.default
         content.threadIdentifier = "local-notification temp"
         
-        let date = Date(timeInterval: 24, since: medication.takeTime!)
+        let date = Date(timeInterval: 0, since: medication.takeTime!)
         
         let dateComponents = Calendar.current.dateComponents([.hour, .minute], from: date)
         
