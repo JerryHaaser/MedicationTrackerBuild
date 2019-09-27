@@ -22,13 +22,6 @@ class MedicationCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         collectionView?.reloadData()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-//        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,7 +38,7 @@ class MedicationCollectionViewController: UICollectionViewController {
             let addMedicationVC = segue.destination as? AddMedicationViewController
             addMedicationVC?.medicationController = medicationController
             
-        }; if segue.identifier == "MedicationDetailShowSegue" {
+        } else if segue.identifier == "MedicationDetailShowSegue" {
             
             if let medicationDetailVC = segue.destination as? MedicationDetailViewController {
                 if let indexPath = collectionView.indexPathsForSelectedItems?.first {

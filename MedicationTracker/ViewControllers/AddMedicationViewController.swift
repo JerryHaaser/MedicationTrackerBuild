@@ -25,20 +25,16 @@ class AddMedicationViewController: UIViewController, UIImagePickerControllerDele
     
     var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm a"
-        formatter.timeZone = .current
+        formatter.dateFormat = "h:mm a"
+        formatter.timeZone = .autoupdatingCurrent
         return formatter
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setViews()
         
     }
-    
-    func setViews() {
-        
-    }
+
     
     @IBAction func uploadPhotoButton(_ sender: UIButton) {
         
@@ -129,62 +125,7 @@ class AddMedicationViewController: UIViewController, UIImagePickerControllerDele
         
         self.navigationController!.popToRootViewController(animated: true)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
-//func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-//    picker.dismiss(animated: true, completion: nil)
-//}
-//
-//func dateComponents(_ components: Set<Calendar.Component>, from date: Date) -> DateComponents {
-//
-//
-//}
-//
-//func setAlarm(medication: Medication?) {
-//    guard let medication = medication else { return }
-//    let alarmTime = medication.takeTime
-//
-//    var calendar = Calendar(identifier: .gregorian)
-//    var dateComponents = DateComponents()
-//
-//
-//    let aT = calendar.date(from: dateComponents)
-//
-//    let content = UNMutableNotificationContent()
-//    content.title = "Time for your medicine"
-//    content.body = "It's time to take \(medication.name)"
-//    content.sound = UNNotificationSound.default
-//
-//    let trigger = UNCalendarNotificationTrigger(dateMatching: alarmTime, repeats: true)
-//
-//    let triggerDaily = Calendar.current.dateComponents(alarmTime, from: Date)
-//    let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDaily, repeats: true)
-//
-//
-//
-//    let aContent = UNMutableNotificationContent()
-//    content.title = NSString.localizedUserNotificationString(forKey: "Time to take your medicine", arguments: nil)
-//    content.body = NSString.localizedUserNotificationString(forKey: "It's time to take \(medication.name)",
-//        arguments: nil)
-//    // Configure the trigger for a 7am wakeup.
-//    var dateInfo = DateComponents()
-//    dateInfo.hour = 7
-//    dateInfo.minute = 0
-//    let aTrigger = UNCalendarNotificationTrigger(dateMatching: dateInfo, repeats: false)
-//    // Create the request object.
-//    let request = UNNotificationRequest(identifier: "MorningAlarm", content: content, trigger: trigger)
-//
-//
-//
-//}
+

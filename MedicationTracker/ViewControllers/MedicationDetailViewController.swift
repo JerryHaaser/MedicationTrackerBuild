@@ -23,7 +23,7 @@ class MedicationDetailViewController: UIViewController {
     var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
         formatter.dateFormat = "hh:mm a"
-        formatter.timeZone = .current
+        formatter.timeZone = .autoupdatingCurrent
         return formatter
     }
     
@@ -31,11 +31,7 @@ class MedicationDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         updateViews()
     }
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//        // Do any additional setup after loading the view.
-//    }
+
     
     func updateViews() {
         guard let medication = medication else { return }
@@ -67,17 +63,8 @@ class MedicationDetailViewController: UIViewController {
     }
     
     @IBAction func editButton(_ sender: UIBarButtonItem) {
-        
-    }
-    
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
+
 
 }

@@ -17,8 +17,8 @@ class MedicationController {
     
     var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm"
-        formatter.timeZone = .current
+        formatter.dateFormat = "h:mm a"
+        formatter.timeZone = .autoupdatingCurrent
         return formatter
     }
     
@@ -77,6 +77,5 @@ class MedicationController {
             print("Error loading medication data: \(error)")
         }
     }
-    
-   // func update(medication: Medication, )
+
 }

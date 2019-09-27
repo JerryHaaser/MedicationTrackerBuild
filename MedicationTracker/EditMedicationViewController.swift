@@ -26,20 +26,16 @@ class EditMedicationViewController: UIViewController, UIImagePickerControllerDel
     
     var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm a"
-        formatter.timeZone = .current
+        formatter.dateFormat = "h:mm a"
+        formatter.timeZone = .autoupdatingCurrent
         return formatter
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setViews()
         
     }
-    
-    func setViews() {
-        
-    }
+
     
     @IBAction func uploadPhotoButton(_ sender: UIButton) {
         
@@ -108,13 +104,21 @@ class EditMedicationViewController: UIViewController, UIImagePickerControllerDel
         
     }
     
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .badge, .sound])
+    }
+    
     @IBAction func saveEditButton(_ sender: UIButton) {
+        
+        
+        medicationController?.deleteMedication(medication: medication!)
+        
         
         guard let medication = medication.self else { return }
         
         
 
-        medicationController?.deleteMedication(medication: medication)
+        
         
         guard let name = medicationNameEditTextField.text,
             let dosage = dosageEditTextField.text,
